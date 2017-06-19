@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <meta charset="UTF-8" http-equiv="Content-Script-Type" content="text/javascript">
+  <script type="text/javascript" src="/js/jquery-3.2.1.min.js" th:src="@{/js/jquery-3.2.1.min.js}"></script>
+  <script type="text/javascript" src="/js/sample.js" th:src="@{/js/sample.js}"></script>
+  <link href="/css/sample.css" th:href="@{/css/sample.css}" rel="stylesheet"></link>
+  <title>Sample Page</title>
+</head>
+
+<body>
+  <span id="sample01" th:text="${hello + ' world'}"></span>
+  <!--
+  <form>
+    <input type="hidden" name="os" th:value="${bean.value}" />
+  </form>
+  -->
+  <br>
+  <span id="sample02" th:text="${hello + ' test'}"></span>
+  <br>
+  <div id="DIV_ID1">DIV_ID_1</div>
+  <div id="DIV_ID2">DIV_ID_2</div>
+</body>
+</html>
