@@ -1,0 +1,126 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<link href="/css/test.css" th:href="@{/css/test.css}" rel="stylesheet"></link>
+<link href="/css/jquery.dataTables.css" th:href="@{/css/jquery.dataTables.css}" rel="stylesheet"></link>
+
+<script src="/js/jquery-1.12.4.js" th:src="@{/js/jquery-1.12.4.js}"></script>
+<script src="/js/jquery-ui.min.js" th:src="@{/js/jquery-ui.min.js}"></script>
+<script src="/js/jquery.dataTables.min.js" th:src="@{/js/jquery.dataTables.min.js}"></script>
+
+<title>管理者操作画面サンプル</title>
+
+<script>
+$(document).ready(function(){
+	$('#myTable').DataTable({
+	    // 件数切替機能
+	    lengthChange: true,
+	    // 検索機能
+	    searching: true,
+	    // ソート機能
+	    ordering: true,
+	    // 情報表示
+	    info: true,
+	    // ページング機能
+	    paging: true
+	});
+});
+
+
+
+
+</script>
+</head>
+<body>
+
+<div class="divBG">
+
+進捗確認表<br/>
+
+DataTables Table plug-in for jQuery を利用(MITライセンス)<br/>
+
+</div>
+
+
+<table class="dataTable" id="myTable">
+    <thead>
+        <tr>
+
+            <th>PC名</th>
+            <th>IPアドレス</th>
+            <th>実行時間</th>
+            <th>ステータス</th>
+        </tr>
+    </thead>
+    <tbody th:each=" result : ${dataList}" id="a">
+        <tr >
+            <td th:text="${result['pcName']}"></td>
+            <td th:text="${result['ipAddress']}"></td>
+            <td th:text="${result['executionTime']}"></td>
+            <td th:text="${result['propriety']}"></td>
+        </tr>
+
+        <tr >
+            <td>PC_200</td>
+            <td>192.168.30.2</td>
+            <td>2017/05/03</td>
+            <td>完了</td>
+        </tr>
+        <tr >
+            <td>PC_VVV</td>
+            <td>192.168.10.50</td>
+            <td>2017/05/02</td>
+            <td>完了</td>
+        </tr>
+        <tr >
+            <td>PC_541</td>
+            <td>192.168.10.56</td>
+            <td></td>
+            <td>未完了</td>
+        </tr>
+        <tr >
+            <td>PC_845</td>
+            <td>192.168.80.78</td>
+            <td>2017/04/02</td>
+            <td>完了</td>
+        </tr>
+        <tr >
+            <td>PC_50V</td>
+            <td>192.168.10.5</td>
+            <td>2017/05/09</td>
+            <td>完了</td>
+        </tr>
+        <tr >
+            <td>PC_aer</td>
+            <td>192.168.99.99</td>
+            <td>2017/05/82</td>
+            <td>完了</td>
+        </tr>
+        <tr >
+            <td>PC_sss</td>
+            <td>192.168.70.20</td>
+            <td>2017/05/02</td>
+            <td>完了</td>
+        </tr>
+        <tr >
+            <td>PC_eee</td>
+            <td>192.168.70.21</td>
+            <td>2017/05/02</td>
+            <td>完了</td>
+        </tr>
+        <tr >
+            <td>PC_qqq</td>
+            <td>192.168.70.26</td>
+            <td>2017/05/02</td>
+            <td>完了</td>
+        </tr>
+        <tr >
+            <td>PC_puo</td>
+            <td>192.168.10.3</td>
+            <td>2017/05/06</td>
+            <td>完了</td>
+        </tr>
+    </tbody>
+</table>
+</body>
+
+</html>

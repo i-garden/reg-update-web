@@ -1,4 +1,4 @@
-package com.example.regupdateweb;
+package regUpdate;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
