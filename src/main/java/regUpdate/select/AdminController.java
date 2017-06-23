@@ -16,12 +16,42 @@ public class AdminController {
 
     	List<DataForm> list = new ArrayList<>();
 
-    	DataForm dataForm1 = new DataForm();
-    	dataForm1.setIpAddress("192.168.10.1");
-    	dataForm1.setPcName("PC_AAA");
-    	dataForm1.setExecutionTime("2017/06/22");
-    	dataForm1.setPropriety("完了");
-    	list.add(dataForm1);
+    	for (int i = 0; i < 8; i++) {
+    		int k = 1;
+        	DataForm dataForm = new DataForm();
+        	dataForm.setIpAddress("192.168.10." + i);
+        	dataForm.setPcName("PC_AAA" + i);
+        	dataForm.setExecutionTime("2017/0" + i +"/2" + k);
+        	dataForm.setPropriety("完了");
+        	list.add(dataForm);
+        	k++;
+    	}
+
+    	for (int i = 70; i < 79; i++) {
+    		int j = 10;
+    		int k = 2;
+        	DataForm dataForm = new DataForm();
+        	dataForm.setIpAddress("192.168."+ j +"." + i);
+        	dataForm.setPcName("PC_BBB" + i);
+        	dataForm.setExecutionTime("2017/0" + k +"/1" + k);
+        	dataForm.setPropriety("完了");
+        	list.add(dataForm);
+        	j = j + 10;
+        	k++;
+    	}
+
+    	for (int i = 30; i < 36; i++) {
+    		int j = 400;
+    		int k = 4;
+        	DataForm dataForm = new DataForm();
+        	dataForm.setIpAddress("192.168."+ j +"." + i);
+        	dataForm.setPcName("PC_BBB" + i);
+        	dataForm.setExecutionTime("2017/0" + k +"/1" + k);
+        	dataForm.setPropriety("未完了");
+        	list.add(dataForm);
+        	j = j + 10;
+        	k++;
+    	}
 
         model.addAttribute("dataList", list);
         return "admin";

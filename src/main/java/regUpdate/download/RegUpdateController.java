@@ -56,14 +56,16 @@ public class RegUpdateController {
      */
     @RequestMapping(value="/download", method = RequestMethod.GET)
     public void download(HttpServletResponse res) throws IOException {
-        String vbsFilePath = new File(VBS_PATH + VBS_WIN_7_64).getAbsoluteFile().getPath();
+        // String vbsFilePath = new File(VBS_PATH + VBS_WIN_7_64).getAbsoluteFile().getPath();
+        String vbsFilePath = "C:\\home\\work\\vbs\\win7_64.vbs";
         System.out.println(vbsFilePath);
 
         if (new File(vbsFilePath).exists()) {
             // LOCAL
+            System.out.println("OK");
         } else {
             // PRODUCT
-            vbsFilePath = "C:\\application_server\\vps\\" + VBS_WIN_7_64;
+            // vbsFilePath = "C:\\home\\work\\vps\\" + VBS_WIN_7_64;
         }
 
         InputStream is = null;
@@ -105,10 +107,9 @@ public class RegUpdateController {
         service.hoge(req);
 
         String vbsFilePath = new File(SUCCESS_PAGE + SUCCESS).getAbsoluteFile().getPath();
-        File file = new File(vbsFilePath);
+        File file = new File("C:\\home\\work\\vbs\\success.txt");
 
         if (!file.exists()) {
-            throw new IOException();
         }
         res.setContentLength((int) file.length());
         res.setContentType(MediaType.TEXT_PLAIN_VALUE);
